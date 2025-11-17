@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SISCO Login</title>
+  <style>
+    :root {
+      --brand-1: #4096b4;
+      --brand-2: #f78d2b;
+      --brand-3: #084975;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      background: linear-gradient(135deg, var(--brand-3), var(--brand-1));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .login-container {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 40px;
+      width: 320px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(10px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 2;
+    }
+
+    .login-container img {
+      width: 100px;
+      height: auto;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      background: #ffffff1a;
+      border: 1.5px solid #ffffff33;
+      padding: 6px;
+      object-fit: contain;
+      box-shadow: 0 8px 18px rgba(0,0,0,.12);
+    }
+
+    h2 {
+      margin: 0 0 20px;
+      font-weight: 600;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    input::placeholder {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      background: var(--brand-2);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #e57c1f;
+    }
+
+    .orbs { position: fixed; inset: -20vh -20vw; z-index: 0; overflow: hidden; }
+    .orb { position: absolute; border-radius: 9999px; filter: blur(80px); opacity: .35; mix-blend-mode: screen; }
+    .orb--teal { background: var(--brand-1); width: 38vmax; height: 38vmax; left: -10vmax; top: -6vmax; animation: float1 10s ease-in-out infinite alternate; }
+    .orb--orange { background: var(--brand-2); width: 28vmax; height: 28vmax; right: -6vmax; top: 10vmax; animation: float2 12s ease-in-out infinite alternate; }
+    .orb--blue { background: var(--brand-3); width: 35vmax; height: 35vmax; left: 25vmax; bottom: -10vmax; animation: float3 14s ease-in-out infinite alternate; }
+
+    @keyframes float1 { from { transform: translate3d(0,0,0) scale(1); } to { transform: translate3d(6vmax, 4vmax, 0) scale(1.1); } }
+    @keyframes float2 { from { transform: translate3d(0,0,0) scale(1); } to { transform: translate3d(-8vmax, -3vmax, 0) scale(0.95); } }
+    @keyframes float3 { from { transform: translate3d(0,0,0) scale(1); } to { transform: translate3d(-5vmax, -6vmax, 0) scale(1.08); } }
+  </style>
+</head>
+<body>
+  <div class="orbs" aria-hidden="true">
+    <span class="orb orb--teal"></span>
+    <span class="orb orb--orange"></span>
+    <span class="orb orb--blue"></span>
+  </div>
+
+  <div class="login-container">
+    <img src="https://i.imghippo.com/files/mCnr9231SnY.png" alt="SISCO Logo" />
+    <h2>Login</h2>
+    <input type="text" placeholder="Username" />
+    <input type="password" placeholder="Password" />
+    <button type="button">Sign In</button>
+  </div>
+</body>
+</html>
